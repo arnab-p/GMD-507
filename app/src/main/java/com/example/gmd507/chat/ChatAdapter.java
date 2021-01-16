@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.gmd507.MainApplication;
 import com.example.gmd507.R;
 
 import java.util.ArrayList;
@@ -14,10 +15,12 @@ import java.util.ArrayList;
 public class ChatAdapter extends RecyclerView.Adapter<ChatViewHolder> {
     private Context context;
     private ArrayList<ChatDetails> chatList;
+    private String myUserId;
 
     public ChatAdapter(Context context, ArrayList<ChatDetails> chatList) {
         this.context = context;
         this.chatList = chatList;
+        this.myUserId = MainApplication.getPrefHelper().getUserId();
     }
 
     @NonNull

@@ -23,7 +23,6 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.chat_activity);
         recyclerView = findViewById(R.id.chatRecycler);
 
-
 //        - Request for the chat data
 //        - Setup the RecyclerView
 //        - Wait for the chat data to come

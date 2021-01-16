@@ -50,7 +50,6 @@ public class MainActivity extends Activity {
         Adapter adapter = new Adapter(this);
         recyclerView.setAdapter(adapter);
 
-
 //        LinearLayout container = findViewById(R.id.container);
 //        for (int index = 0; index < 5000; index++) {
 //            TextView textView = new TextView(this);
