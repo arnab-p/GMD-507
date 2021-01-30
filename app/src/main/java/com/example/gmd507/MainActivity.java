@@ -7,6 +7,8 @@ import android.app.FragmentManager;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import com.example.gmd507.network.NetworkHelper;
+import com.example.gmd507.network.NetworkResponseHandler;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -49,6 +51,24 @@ public class MainActivity extends Activity {
 
         Adapter adapter = new Adapter(this);
         recyclerView.setAdapter(adapter);
+
+
+        String email = "test@email.com"; // get from the view
+        String password = "pass"; // get from the view
+        String loginApiUrl = String.format("%s/login", Constants.BASE_API);
+        String loginBody = String.format("{\"email\":\"%s\", \"password\":\"%s\"}", email, password);
+
+        NetworkHelper loginApi = new NetworkHelper(loginApiUrl, loginBody, new NetworkResponseHandler() {
+            @Override
+            public void onSuccess(String response) {
+
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
 
 //        LinearLayout container = findViewById(R.id.container);
 //        for (int index = 0; index < 5000; index++) {
